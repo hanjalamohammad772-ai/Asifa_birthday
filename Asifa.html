@@ -1,0 +1,341 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>For Asifa ❤️</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;min-height:100vh;overflow-x:hidden;
+ font-family:Arial,sans-serif;color:white;text-align:center;
+ background:linear-gradient(135deg,#100018,#3b0750,#09000f);
+}
+.page{
+ min-height:100vh;display:none;align-items:center;
+ justify-content:center;padding:25px 18px;
+}
+.show{display:flex}
+.box{
+ width:100%;max-width:520px;padding:30px 20px;
+ border-radius:28px;background:#ffffff12;
+ border:1px solid #ffffff20;backdrop-filter:blur(12px);
+ box-shadow:0 20px 60px #0008;
+}
+h1{font-size:clamp(40px,11vw,70px);margin:15px 0}
+h2{font-size:clamp(28px,8vw,45px)}
+p{line-height:1.7;color:#eee}
+.small{
+ color:#ffacd9;letter-spacing:3px;
+ font-size:13px;text-transform:uppercase
+}
+button{
+ border:0;border-radius:50px;padding:15px 25px;
+ background:linear-gradient(135deg,#ff3c9d,#873cff);
+ color:white;font-size:16px;font-weight:bold;
+ box-shadow:0 10px 30px #ff3c9d55;
+}
+button:active{transform:scale(.95)}
+
+.moon{
+ width:100px;height:100px;border-radius:50%;
+ background:#fff2b8;margin:0 auto 25px;
+ box-shadow:0 0 70px #fff2b866;
+}
+.title span{
+ display:block;
+ background:linear-gradient(90deg,#fff,#ff75bd,#c993ff,#fff);
+ -webkit-background-clip:text;color:transparent;
+}
+.cake{font-size:90px;animation:float 2s infinite}
+@keyframes float{50%{transform:translateY(-10px)}}
+
+.gift{
+ width:140px;height:110px;margin:30px auto;
+ position:relative;cursor:pointer;
+}
+.body{
+ position:absolute;bottom:0;width:140px;height:85px;
+ background:linear-gradient(135deg,#ff4cae,#a735ff);
+ border-radius:8px;
+}
+.lid{
+ position:absolute;top:10px;left:-7px;width:154px;height:30px;
+ background:#ff61b7;border-radius:7px;z-index:2;
+ transition:.6s;
+}
+.ribbon{
+ position:absolute;left:58px;top:0;width:24px;height:110px;
+ background:#ffe5f3;z-index:3;
+}
+.gift.open .lid{transform:translateY(-65px) rotate(-7deg)}
+
+.letter{
+ display:none;text-align:left;
+ background:#fff;color:#3a173d;
+ padding:25px 20px;border-radius:22px;
+ animation:up .7s ease;
+}
+.letter.show{display:block}
+.letter h3{color:#bd287e}
+.letter p{color:#3a173d}
+.sign{text-align:right;color:#a52878;font-weight:bold}
+
+.final{display:none;margin-top:25px}
+.final.show{display:block}
+.heart{font-size:60px;animation:beat 1s infinite}
+@keyframes beat{50%{transform:scale(1.2)}}
+
+.floatHeart{
+ position:fixed;bottom:-30px;font-size:22px;
+ animation:rise 6s linear forwards;pointer-events:none
+}
+@keyframes rise{
+ 0%{opacity:0}10%{opacity:1}
+ 100%{transform:translateY(-110vh) rotate(360deg);opacity:0}
+}
+.conf{
+ position:fixed;top:-20px;width:8px;height:14px;
+ animation:fall 4s linear forwards
+}
+@keyframes fall{
+ to{transform:translateY(110vh) rotate(720deg)}
+}
+@keyframes up{
+ from{opacity:0;transform:translateY(20px)}
+ to{opacity:1;transform:translateY(0)}
+}
+</style>
+</head>
+
+<body>
+
+<!-- FIRST PAGE -->
+<section class="page show" id="p1">
+<div class="box">
+<div class="moon"></div>
+<div class="small">A little surprise</div>
+
+<h1>Hey Asifa ✨</h1>
+
+<p>
+Someone made something special for you...
+<br>Are you ready? 👀
+</p>
+
+<button onclick="next(2)">Open Surprise 💫</button>
+</div>
+</section>
+
+
+<!-- SECOND PAGE -->
+<section class="page" id="p2">
+<div class="box">
+
+<div class="small">Wait a second...</div>
+
+<h2>Asifa, today is different ❤️</h2>
+
+<p id="text"></p>
+
+<button id="go" style="display:none"
+onclick="next(3)">
+Continue ✨
+</button>
+
+</div>
+</section>
+
+
+<!-- BIRTHDAY PAGE -->
+<section class="page" id="p3">
+<div class="box">
+
+<div class="small">Your special day</div>
+
+<h1 class="title">
+<span>Happy Birthday</span>
+<span>Asifa 🎂</span>
+</h1>
+
+<div class="cake">🎂</div>
+
+<p>
+May your life always be filled with happiness,
+beautiful memories and countless reasons to smile. ✨
+</p>
+
+<div class="small">One more surprise...</div>
+
+<div class="gift" onclick="openGift()">
+<div class="lid"></div>
+<div class="body"></div>
+<div class="ribbon"></div>
+</div>
+
+<p id="hint">🎁 Tap the gift</p>
+
+
+<div class="letter" id="letter">
+
+<h3>Dear Asifa ❤️</h3>
+
+<p>
+Aaj ka din special hai kyunki aaj tumhara birthday hai.
+</p>
+
+<p>
+Main bas ye chahta hoon ki tum hamesha khush raho,
+smile karti raho aur tumhari life mein bahut saare
+beautiful moments aayein. 😊
+</p>
+
+<p>
+Ye ek chhota sa surprise hai,
+lekin hope karta hoon ki tumhare face par
+ek badi si smile aa jaye. ✨
+</p>
+
+<p>
+Once again, <b>Happy Birthday Asifa!</b> 🎂❤️
+</p>
+
+<div class="sign">— Lucky 💖</div>
+
+</div>
+
+
+<div class="final" id="final">
+<div class="heart">❤️</div>
+<h2>Keep Smiling, Asifa ✨</h2>
+<p>
+This little surprise was made especially for you.
+</p>
+<button onclick="celebrate()">Celebrate Again 🎉</button>
+</div>
+
+</div>
+</section>
+
+
+<script>
+
+function next(n){
+ document.querySelectorAll(".page")
+ .forEach(x=>x.classList.remove("show"));
+
+ document.getElementById("p"+n).classList.add("show");
+
+ if(n==2) type();
+ if(n==3){hearts(20);confetti(60)}
+}
+
+let msg=
+"Asifa... someone wanted to make your birthday a little more memorable. ❤️";
+
+let i=0;
+
+function type(){
+ let el=document.getElementById("text");
+
+ let timer=setInterval(()=>{
+   el.innerHTML=msg.slice(0,i)+"|";
+   i++;
+
+   if(i>msg.length){
+    clearInterval(timer);
+    el.innerHTML=msg;
+    document.getElementById("go").style.display="inline-block";
+   }
+ },45);
+}
+
+
+function openGift(){
+
+ let gift=document.querySelector(".gift");
+ gift.classList.add("open");
+
+ document.getElementById("hint").innerHTML=
+ "✨ Your surprise is here!";
+
+ setTimeout(()=>{
+   document.getElementById("letter")
+   .classList.add("show");
+
+   confetti(100);
+   hearts(30);
+
+   setTimeout(()=>{
+    document.getElementById("final")
+    .classList.add("show");
+   },800);
+
+ },600);
+}
+
+
+function hearts(n){
+
+ let icons=["❤️","💖","💕","💗","✨"];
+
+ for(let i=0;i<n;i++){
+
+  setTimeout(()=>{
+
+   let h=document.createElement("div");
+   h.className="floatHeart";
+   h.innerHTML=
+   icons[Math.floor(Math.random()*icons.length)];
+
+   h.style.left=Math.random()*100+"%";
+   h.style.animationDuration=
+   (4+Math.random()*4)+"s";
+
+   document.body.appendChild(h);
+
+   setTimeout(()=>h.remove(),8000);
+
+  },i*100);
+ }
+}
+
+
+function confetti(n){
+
+ for(let i=0;i<n;i++){
+
+  setTimeout(()=>{
+
+   let c=document.createElement("div");
+   c.className="conf";
+
+   c.style.left=Math.random()*100+"%";
+
+   c.style.background=
+   "hsl("+Math.random()*360+",90%,70%)";
+
+   c.style.animationDuration=
+   (3+Math.random()*2)+"s";
+
+   document.body.appendChild(c);
+
+   setTimeout(()=>c.remove(),5500);
+
+  },i*20);
+ }
+}
+
+
+function celebrate(){
+ confetti(120);
+ hearts(40);
+}
+
+</script>
+
+</body>
+</html>
+```
